@@ -1,0 +1,16 @@
+services:
+    postgres:
+        container_name: postgres
+        image: postgres:latest
+        restart: always
+        environment:
+            POSTGRES_DB: Movies
+            POSTGRES_USER: wis
+            POSTGRES_PASSWORD: Vfrcbv19!
+        ports:
+        - 5432:5432
+        volumes:
+        - postgres-data:/var/lib/postgresql/data
+
+volumes:
+    postgres-data:
