@@ -3,12 +3,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FilmCollector.DataAccess
 {
-    public class FilmsCollectionDbContext : DbContext
+    public class FilmsCollectionDbContext(DbContextOptions<FilmsCollectionDbContext> options) : DbContext(options)
     {
-        public DbSet<FilmEntity> Films { get; set; }
-        public FilmsCollectionDbContext(DbContextOptions<FilmsCollectionDbContext> options) :base(options)
-        {
-            
-        }
+        public DbSet<FilmEntity> Films { get; set; } = null!;
+        public DbSet<CategoryEntity> Categories { get; set; }= null!;
     }
 }

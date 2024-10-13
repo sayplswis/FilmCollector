@@ -13,6 +13,9 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IFilmsService, FilmsService>();
 builder.Services.AddScoped<IFilmsRepository, FilmsRepository>();
 
+builder.Services.AddScoped<ICategoriesService, CategoriesService>();
+builder.Services.AddScoped<ICategoriesRepository, CategoriesRepository>();
+
 builder.Services.AddDbContext<FilmsCollectionDbContext>(options =>
 {
     options.UseNpgsql(builder.Configuration.GetConnectionString(nameof(FilmsCollectionDbContext)));
@@ -21,7 +24,7 @@ builder.Services.AddDbContext<FilmsCollectionDbContext>(options =>
 
 
 
-var app = builder.Build();
+ var app = builder.Build();
 
 if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
 {

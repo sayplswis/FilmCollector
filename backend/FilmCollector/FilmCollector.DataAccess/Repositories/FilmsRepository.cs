@@ -14,7 +14,7 @@ namespace FilmCollector.DataAccess.Repositories
                 .ToListAsync();
 
             var films = filmEntities
-                .Select(f => Film.Create(f.Id, f.Title, f.Description).Film)
+                .Select(f => Film.Create(f.Id, f.Title, f.Uri, f.CategoryId, f.Description, f.ImageData).Film)
                 .ToList();
 
             return films;
@@ -25,7 +25,10 @@ namespace FilmCollector.DataAccess.Repositories
             {
                 Id = film.Id,
                 Title = film.Title,
-                Description = film.Description
+                Description = film.Description,
+                CategoryId = film.CategoryId,
+                ImageData = film.ImageData,
+                Uri = film.Uri
             };
 
             await dbContext.Films.AddAsync(filmEntity);
@@ -33,15 +36,37 @@ namespace FilmCollector.DataAccess.Repositories
 
             return filmEntity.Id;
         }
-        public async Task<Guid> Update(Guid id, string title, string description)
+        public async Task<Guid> Update(Guid id, string title, string description, byte[] imageData, Guid categoryId, string uri)
         {
             await dbContext.Films
                 .Where(f => f.Id == id)
                 .ExecuteUpdateAsync(s => s
-                .SetProperty(p => p.Title, p => title)
-                .SetProperty(p => p.Title, p => description));
+                    .SetProperty(p => p.Title, p => title)
+                    .SetProperty(p => p.Description, p => description)
+                    .SetProperty(p => p.ImageData, p => imageData)
+                    .SetProperty(p => p.CategoryId, p => categoryId)
+                    .SetProperty(p => p.Uri, p => uri));
             return id;
         }
+
+        public async Task<Guid> Update(Guid id, Status status)
+        {
+            await dbContext.Films
+                .Where(f => f.Id == id)
+                .ExecuteUpdateAsync(s => s
+                    .SetProperty(p => p.Status, p => status));
+            return id;
+        }
+
+        public async Task<Guid> Update(Guid id, int rating)
+        {
+            await dbContext.Films
+                .Where(f => f.Id == id)
+                .ExecuteUpdateAsync(s => s
+                    .SetProperty(p => p.Rating, p => rating));
+            return id;
+        }
+
         public async Task<Guid> Delete(Guid id)
         {
             await dbContext.Films.Where(f => f.Id == id).ExecuteDeleteAsync();
