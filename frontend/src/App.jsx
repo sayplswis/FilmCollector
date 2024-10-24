@@ -1,14 +1,24 @@
 import * as React from 'react'
 import Filter from './components/Filter'
 import TopMenu from './components/TopMenu'
+import MovieCard from './components/MovieCard'
+import AuthForm from './components/AuthForm'
 
 function App() {
   return (
- <div className='bg-gradient-to-r from-[#778beb] to-[#546de5] h-screen w-screen overflow-hidden'>
-    <div className=''>
+ <div
+ style={{ backgroundImage: `url('/background.jpeg')` }} 
+ className='bg-cover bg-center h-screen w-screen overflow-hidden flex flex-col'>
+    <div>
       <TopMenu />
       <Filter />
     </div>
+      <div className='flex-grow flex items-center justify-center'>
+        <AuthForm></AuthForm>
+        {/* <div className='w-[30rem] h-[30rem] bg-red-500 blur-md'>
+          <input placeholder='Helo'></input>
+        </div> */}
+      </div>
 </div> 
   )
 }
