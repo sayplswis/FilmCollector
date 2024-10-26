@@ -16,7 +16,7 @@ function App() {
         {/* <AuthForm></AuthForm> */}
         <div className='bg-black/30 backdrop-blur-md rounded-3xl w-full max-h-[90vh] mx-2 mt-4 mb-8'>
                             <Filter></Filter>
-                            <div className='w-full max-h-[84vh] grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-4 overflow-y-scroll scrollbar-hide p-[10px]'>
+                            <div className='w-full max-h-[84vh] sm:max-h-[70vh] md:max-h-[78vh] xl:max-h-[84vh] grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-4 overflow-y-scroll scrollbar-hide p-[10px]'>
                             <MovieCard></MovieCard>
                             <MovieCard></MovieCard>
                             <MovieCard></MovieCard>

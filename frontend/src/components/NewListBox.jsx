@@ -6,7 +6,7 @@ import { useState } from 'react'
 export default function NewListBox({ filterValues }){
   const [selected, setSelected] = useState(filterValues[0])
     return(
-      <div className="w-[250px] my-[6px] mx-[2px] min-w-[206px]">
+      <div className="w-full my-[6px] mx-[2px] min-w-[206px]">
       <Listbox value={selected} onChange={setSelected}>
         <ListboxButton className={clsx(
             'relative block w-full rounded-lg bg-white/5 py-1.5 pr-8 pl-3 text-left text-sm/6 text-white',
