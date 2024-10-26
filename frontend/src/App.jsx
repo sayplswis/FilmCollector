@@ -7,18 +7,43 @@ import AuthForm from './components/AuthForm'
 function App() {
   return (
  <div
- style={{ backgroundImage: `url('/background.jpeg')` }} 
- className='bg-cover bg-center h-screen w-screen overflow-hidden flex flex-col'>
+ style={{ backgroundImage: `url('/back.jpg')` }} 
+ className='bg-cover bg-center h-screen w-screen overflow-hidden flex flex-col gap-4'>
     <div>
       <TopMenu />
-      <Filter />
     </div>
-      <div className='flex-grow flex items-center justify-center'>
-        <AuthForm></AuthForm>
-        {/* <div className='w-[30rem] h-[30rem] bg-red-500 blur-md'>
-          <input placeholder='Helo'></input>
-        </div> */}
-      </div>
+    <div className='flex-grow flex items-center justify-center'>
+        {/* <AuthForm></AuthForm> */}
+        <div className='bg-black/30 backdrop-blur-md rounded-3xl w-full max-h-[90vh] mx-2 mt-4 mb-8'>
+                            <Filter></Filter>
+                            <div className='w-full max-h-[84vh] grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-4 overflow-y-scroll scrollbar-hide p-[10px]'>
+                            <MovieCard></MovieCard>
+                            <MovieCard></MovieCard>
+                            <MovieCard></MovieCard>
+                            <MovieCard></MovieCard>
+                            <MovieCard></MovieCard>
+                            <MovieCard></MovieCard>
+                            <MovieCard></MovieCard>
+                            <MovieCard></MovieCard>
+                            <MovieCard></MovieCard>
+                            <MovieCard></MovieCard>
+                            <MovieCard></MovieCard>
+                            <MovieCard></MovieCard>
+                            <MovieCard></MovieCard>
+                            <MovieCard></MovieCard>
+                            <MovieCard></MovieCard>
+                            <MovieCard></MovieCard>
+                            <MovieCard></MovieCard>
+                            <MovieCard></MovieCard>
+                            <MovieCard></MovieCard>
+                            <MovieCard></MovieCard>
+                            <MovieCard></MovieCard>
+                            <MovieCard></MovieCard>
+                            </div>
+                            
+
+        </div>
+    </div>
 </div> 
   )
 }

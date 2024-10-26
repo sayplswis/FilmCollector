@@ -1,19 +1,35 @@
+import { Button } from "@headlessui/react";
+import NewListBox from "./NewListBox.jsx";
+
+
+const dateFilter = [
+    { id: 1, name: 'Сначала старые' },
+    { id: 2, name: 'Сначала новые' }
+  ]
+  const statusFilter = [
+    { id: 1, name: 'Ожидающие' },
+    { id: 2, name: 'Просмотренные' },
+    { id: 3, name: 'Все' }
+  ]
+
+
 
 export default function Filter(){
     return(
-        <div className='h-13 bg-[#546de5] w-full flex ps-1 p-1'>
-            {/* <Select placeholder='Select option' width="500px" margin="2px">
-                <option value='option1'>Option 1</option>
-                <option value='option2'>Option 2</option>
-                <option value='option3'>Option 3</option>
-            </Select>
-            <Select width="500px" margin="2px" bg="blue.500">
-                <option value='option1' className='appearance-none bg-[#546de5]' >Option 1</option>
-                <option value='option2'>Option 2</option>
-                <option value='option3'>Option 3</option>
-            </Select>
-            <Input placeholder='Basic usage' width="500px" margin="2px"/>
-            <Button margin="2px">Поиск</Button> */}
+        <div className='h-[150px] sm:h-[150px] md:h-[100px] lg:h-[100px] xl:h-[50px] bg-gray-900/60 w-full rounded-t-3xl flex flex-col sm:flex-row items-center px-[20px]'>
+            <div className="flex flex-row flex-wrap mb-auto">
+                <div className="flex flex-row mt-[2px]">
+                    <p className="font-bold text-white/80 pt-[12px] min-w-[192px]">Сортировка по дате:</p>
+                    <NewListBox filterValues={dateFilter} />
+                </div>
+                <div className="flex flex-row ml-[2px] mt-[2px] mr-[2px]">
+                    <p className="font-bold text-white/80  pt-[12px] mr-[2px] min-w-[192px]">Сортировка по статусу:</p>
+                    <NewListBox filterValues={statusFilter} />
+                </div>
+            </div>
+            <div className="flex-grow mt-2 sm:mt-0 sm:ml-auto flex">
+                <Button className="myButton py-0 px-0 h-full w-full bg-green-300 text-green-950 font-extrabold hover:bg-green-400 flex-grow">Добавить</Button>
+            </div>
         </div>
     )
 }

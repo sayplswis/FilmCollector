@@ -11,10 +11,10 @@ export default function AuthForm(){
         Type: "password"
     }
     return(
-    <div className="bg-black/30 backdrop-blur-sm h-1/2 w-2/3 rounded-xl shadow-xl max-w-[800px]">
+    <div className="bg-black/30 backdrop-blur-sm h-1/2 w-2/3 rounded-xl shadow-xl max-w-[800px] shadow-yellow-100/30">
         <div className="flex flex-row h-full">
             <img 
-            className="w-1/2 h-full rounded-l-xl md:drop-shadow-2xl"
+            className="w-1/2 h-full rounded-l-xl md:drop-shadow-2xl p-4"
             style={{
                 filter: "drop-shadow(0 0 10px rgba(255, 255, 255, 0.8))"
             }}
@@ -24,11 +24,7 @@ export default function AuthForm(){
                 <FloatingTextBox label={input1}/>
                 <FloatingTextBox label={input2}/>
                     <div className='m-4 flex justify-end'>
-                        <Button className="inline-flex items-center justify-center gap-2 rounded-md w-2/5
-                         bg-gray-700 py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner
-                         shadow-white/10 focus:outline-none data-[hover]:bg-gray-600
-                         data-[open]:bg-gray-700 data-[focus]:outline-1 data-[focus]:outline-white"> Войти
-                        </Button>
+                        <Button className="myButton">Войти</Button>
                     </div>
                 </div>
             </div>

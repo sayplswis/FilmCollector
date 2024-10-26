@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer components{
+    .myButton{
+        @apply inline-flex items-center justify-center gap-2 rounded-md w-2/5
+        bg-gray-700 py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner
+        shadow-white/10 focus:outline-none data-[hover]:bg-gray-600
+        data-[open]:bg-gray-700 data-[focus]:outline-1 data-[focus]:outline-white
+    }
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none; /* Скрывает скроллбар для Chrome, Safari и других WebKit-браузеров */
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* Скрывает скроллбар для IE и Edge */
+    scrollbar-width: none; /* Скрывает скроллбар для Firefox */
+  }
