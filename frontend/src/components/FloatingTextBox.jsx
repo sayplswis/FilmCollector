@@ -1,18 +1,20 @@
+import { Field, Input, Label } from '@headlessui/react'
+import clsx from 'clsx'
+
 export default function FloatingTextBox({ label }){
     return(
-
-<label htmlFor={label} className="relative block overflow-hidden border-b border-gray-200 bg-transparent pt-3 focus-within:border-blue-600">
-    
-    <input
-        id={label}
-        type="input"
-        placeholder=""
-        className="peer h-9 w-full border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
-    />
-
-    <span className="absolute start-0 top-2 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs">
-        {label}
-    </span>
-</label>
+        <div className="w-full px-4">
+        <Field>
+          <Label className="text-sm/6 font-medium text-white">{label.Title}</Label>
+          {/* <Description className="text-sm/6 text-white/50">Use your real name so people will recognize you.</Description> */}
+          <Input
+          type={label.Type}
+            className={clsx(
+              'mt-1 block w-full rounded-lg border-none bg-white/5 py-1.5 px-3 text-sm/6 text-white',
+              'focus:outline-none data-[focus]:outline-2 data-[focus]:-outline-offset-2 data-[focus]:outline-white/25'
+            )}
+          />
+        </Field>
+      </div>
     )
 }

@@ -1,9 +1,8 @@
-import { Button, Select, Input } from '@chakra-ui/react'
 
 export default function Filter(){
     return(
         <div className='h-13 bg-[#546de5] w-full flex ps-1 p-1'>
-            <Select placeholder='Select option' width="500px" margin="2px">
+            {/* <Select placeholder='Select option' width="500px" margin="2px">
                 <option value='option1'>Option 1</option>
                 <option value='option2'>Option 2</option>
                 <option value='option3'>Option 3</option>
@@ -14,7 +13,7 @@ export default function Filter(){
                 <option value='option3'>Option 3</option>
             </Select>
             <Input placeholder='Basic usage' width="500px" margin="2px"/>
-            <Button margin="2px">Поиск</Button>
+            <Button margin="2px">Поиск</Button> */}
         </div>
     )
 }
